@@ -1,0 +1,732 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.frmMain..Create(BaseForm)
+Gui.frmMain..Size(1132,698)
+Gui.frmMain..MinX(1016)
+Gui.frmMain..MinY(696)
+Gui.frmMain..Position(0,0)
+Gui.frmMain..BackColor(-2147483633)
+Gui.frmMain..MousePointer(0)
+Gui.frmMain..Event(UnLoad,frmMain_UnLoad)
+Gui.frmMain..Caption("Work Order Labels (6944)")
+Gui.frmMain..AlwaysOnTop(False)
+Gui.frmMain..FontName("Tahoma")
+Gui.frmMain..FontSize(8.25)
+Gui.frmMain..ControlBox(True)
+Gui.frmMain..MaxButton(True)
+Gui.frmMain..MinButton(True)
+Gui.frmMain..Moveable(True)
+Gui.frmMain..Sizeable(True)
+Gui.frmMain..ShowInTaskBar(True)
+Gui.frmMain..TitleBar(True)
+Gui.frmMain..BarExportButton(True)
+Gui.frmMain..BarRefreshButton(True)
+Gui.frmMain..BarSearchBox(False)
+Gui.frmMain..BarAddButton("ResetGridLayout","Reset Grid Layout",V.Enum.Image!LAYOUT_RESET_COLOR)
+Gui.frmMain..BarAddButton("SaveGridLayout","Save Grid Layout",V.Enum.Image!LAYOUT_SAVE_COLOR)
+Gui.frmMain.GsGCData.Create(GsGridControl)
+Gui.frmMain.GsGCData.Enabled(True)
+Gui.frmMain.GsGCData.Visible(True)
+Gui.frmMain.GsGCData.Zorder(500)
+Gui.frmMain.GsGCData.Size(1126,555)
+Gui.frmMain.GsGCData.Position(2,100)
+Gui.frmMain.GsGCData.Dock(0)
+Gui.frmMain.GsGCData.Anchor(15)
+Gui.frmMain.GsGCData.Event(RowCellClick,GsGCData_RowCellClick)
+Gui.frmMain.dtpFrom.Create(DatePicker)
+Gui.frmMain.dtpFrom.Enabled(True)
+Gui.frmMain.dtpFrom.Visible(True)
+Gui.frmMain.dtpFrom.Zorder(0)
+Gui.frmMain.dtpFrom.Size(100,20)
+Gui.frmMain.dtpFrom.Position(10,22)
+Gui.frmMain.dtpFrom.CheckBox(False)
+Gui.frmMain.dtpFrom.FontName("Tahoma")
+Gui.frmMain.dtpFrom.FontSize(8.25)
+Gui.frmMain.dtpTo.Create(DatePicker)
+Gui.frmMain.dtpTo.Enabled(True)
+Gui.frmMain.dtpTo.Visible(True)
+Gui.frmMain.dtpTo.Zorder(0)
+Gui.frmMain.dtpTo.Size(100,20)
+Gui.frmMain.dtpTo.Position(114,22)
+Gui.frmMain.dtpTo.CheckBox(False)
+Gui.frmMain.dtpTo.FontName("Tahoma")
+Gui.frmMain.dtpTo.FontSize(8.25)
+Gui.frmMain.lbl1.Create(Label,"From Due Date",True,72,13,0,10,8,True,0,"Tahoma",8.25,,0,0)
+Gui.frmMain.lbl1.BorderStyle(0)
+Gui.frmMain.lbl2.Create(Label,"To Due Date",True,60,13,0,114,8,True,0,"Tahoma",8.25,,0,0)
+Gui.frmMain.lbl2.BorderStyle(0)
+Gui.frmMain.cmdRunGrid.Create(Button)
+Gui.frmMain.cmdRunGrid.Enabled(True)
+Gui.frmMain.cmdRunGrid.Visible(True)
+Gui.frmMain.cmdRunGrid.Zorder(0)
+Gui.frmMain.cmdRunGrid.Size(75,23)
+Gui.frmMain.cmdRunGrid.Position(634,19)
+Gui.frmMain.cmdRunGrid.Caption("Run")
+Gui.frmMain.cmdRunGrid.FontName("Tahoma")
+Gui.frmMain.cmdRunGrid.FontSize(8.25)
+Gui.frmMain.cmdRunGrid.SvgPicture("icon_go_color")
+Gui.frmMain.cmdRunGrid.Event(Click,cmdRunGrid_Click)
+Gui.frmMain.cmdSelect.Create(Button)
+Gui.frmMain.cmdSelect.Enabled(True)
+Gui.frmMain.cmdSelect.Visible(True)
+Gui.frmMain.cmdSelect.Zorder(0)
+Gui.frmMain.cmdSelect.Size(75,23)
+Gui.frmMain.cmdSelect.Position(9,74)
+Gui.frmMain.cmdSelect.Caption("Select All")
+Gui.frmMain.cmdSelect.FontName("Tahoma")
+Gui.frmMain.cmdSelect.FontSize(8.25)
+Gui.frmMain.cmdSelect.SvgPicture("icon_select_all_color")
+Gui.frmMain.cmdSelect.Event(Click,cmdSelect_Click)
+Gui.frmMain.cmdUnselect.Create(Button)
+Gui.frmMain.cmdUnselect.Enabled(True)
+Gui.frmMain.cmdUnselect.Visible(True)
+Gui.frmMain.cmdUnselect.Zorder(0)
+Gui.frmMain.cmdUnselect.Size(90,23)
+Gui.frmMain.cmdUnselect.Position(88,74)
+Gui.frmMain.cmdUnselect.Caption("Unselect All")
+Gui.frmMain.cmdUnselect.FontName("Tahoma")
+Gui.frmMain.cmdUnselect.FontSize(8.25)
+Gui.frmMain.cmdUnselect.SvgPicture("icon_select_none_color")
+Gui.frmMain.cmdUnselect.Event(Click,cmdUnselect_Click)
+Gui.frmMain.cmdPrintLabels.Create(Button)
+Gui.frmMain.cmdPrintLabels.Enabled(True)
+Gui.frmMain.cmdPrintLabels.Visible(True)
+Gui.frmMain.cmdPrintLabels.Zorder(0)
+Gui.frmMain.cmdPrintLabels.Size(90,23)
+Gui.frmMain.cmdPrintLabels.Position(748,19)
+Gui.frmMain.cmdPrintLabels.Caption("Print Labels")
+Gui.frmMain.cmdPrintLabels.FontName("Tahoma")
+Gui.frmMain.cmdPrintLabels.FontSize(8.25)
+Gui.frmMain.cmdPrintLabels.SvgPicture("icon_printer_color")
+Gui.frmMain.cmdPrintLabels.Event(Click,cmdPrintLabels_Click)
+Gui.frmMain.cmdResetGrid.Create(Button)
+Gui.frmMain.cmdResetGrid.Enabled(True)
+Gui.frmMain.cmdResetGrid.Visible(True)
+Gui.frmMain.cmdResetGrid.Zorder(0)
+Gui.frmMain.cmdResetGrid.Size(23,23)
+Gui.frmMain.cmdResetGrid.Position(1101,18)
+Gui.frmMain.cmdResetGrid.Caption("")
+Gui.frmMain.cmdResetGrid.FontName("Tahoma")
+Gui.frmMain.cmdResetGrid.FontSize(8.25)
+Gui.frmMain.cmdResetGrid.SvgPicture("icon_layout_reset_color")
+Gui.frmMain.cmdResetGrid.ToolTip("Reset Grid Preferences")
+Gui.frmMain.cmdResetGrid.Event(Click,cmdResetGrid_Click)
+Gui.frmMain.cmdResetGrid.Anchor(9)
+Gui.frmMain.lblLoadingMsg.Create(Label,"Loading...",False,91,25,100,9,109,True,0,"Tahoma",16,,0,0)
+Gui.frmMain.lblLoadingMsg.BorderStyle(0)
+Gui.frmMain.lblLoadingMsg.ForeColor(2263842)
+Gui.frmMain.txtJobStart.Create(TextBox,"",True,70,20,0,254,22,True,0,"Tahoma",8.25,,1)
+Gui.frmMain.txtJobStart.MaxLength(6)
+Gui.frmMain.txtJobStart.Event(LostFocus,txtJobStart_Change)
+Gui.frmMain.txtSuffixStart.Create(TextBox,"",True,35,20,0,328,22,True,0,"Tahoma",8.25,,1)
+Gui.frmMain.txtSuffixStart.MaxLength(3)
+Gui.frmMain.lbl3.Create(Label,"From Job/Sfx",True,64,13,0,254,8,True,0,"Tahoma",8.25,,0,0)
+Gui.frmMain.lbl3.BorderStyle(0)
+Gui.frmMain.cmdStartWO.Create(Button)
+Gui.frmMain.cmdStartWO.Enabled(True)
+Gui.frmMain.cmdStartWO.Visible(True)
+Gui.frmMain.cmdStartWO.Zorder(0)
+Gui.frmMain.cmdStartWO.Size(23,23)
+Gui.frmMain.cmdStartWO.Position(367,19)
+Gui.frmMain.cmdStartWO.Caption("")
+Gui.frmMain.cmdStartWO.FontName("Tahoma")
+Gui.frmMain.cmdStartWO.FontSize(8.25)
+Gui.frmMain.cmdStartWO.SvgPicture("icon_browser_color")
+Gui.frmMain.cmdStartWO.Event(Click,cmdStartWO_Click)
+Gui.frmMain.lbl4.Create(Label,"To Job/Sfx",True,52,13,0,405,8,True,0,"Tahoma",8.25,,0,0)
+Gui.frmMain.lbl4.BorderStyle(0)
+Gui.frmMain.txtJobEnd.Create(TextBox,"",True,70,20,0,405,22,True,0,"Tahoma",8.25,,1)
+Gui.frmMain.txtJobEnd.MaxLength(6)
+Gui.frmMain.txtSuffixEnd.Create(TextBox,"",True,35,20,0,479,22,True,0,"Tahoma",8.25,,1)
+Gui.frmMain.txtSuffixEnd.MaxLength(3)
+Gui.frmMain.cmdEndWO.Create(Button)
+Gui.frmMain.cmdEndWO.Enabled(True)
+Gui.frmMain.cmdEndWO.Visible(True)
+Gui.frmMain.cmdEndWO.Zorder(0)
+Gui.frmMain.cmdEndWO.Size(23,23)
+Gui.frmMain.cmdEndWO.Position(518,19)
+Gui.frmMain.cmdEndWO.Caption("")
+Gui.frmMain.cmdEndWO.FontName("Tahoma")
+Gui.frmMain.cmdEndWO.FontSize(8.25)
+Gui.frmMain.cmdEndWO.SvgPicture("icon_browser_color")
+Gui.frmMain.cmdEndWO.Event(Click,cmdEndWO_Click)
+Gui.frmMain.chkAllWO.Create(CheckBox)
+Gui.frmMain.chkAllWO.Enabled(True)
+Gui.frmMain.chkAllWO.Visible(True)
+Gui.frmMain.chkAllWO.Zorder(0)
+Gui.frmMain.chkAllWO.Size(75,20)
+Gui.frmMain.chkAllWO.Position(558,22)
+Gui.frmMain.chkAllWO.Caption("All WO's")
+Gui.frmMain.chkAllWO.FontName("Tahoma")
+Gui.frmMain.chkAllWO.FontSize(8.25)
+Gui.frmMain.chkAllWO.DefaultValue(0)
+Gui.frmMain.chkAllWO.Event(Change,chkAllWO_Change)
+Gui.frmMain.ddlDept.Create(DropDownList)
+Gui.frmMain.ddlDept.Enabled(True)
+Gui.frmMain.ddlDept.Visible(True)
+Gui.frmMain.ddlDept.Zorder(0)
+Gui.frmMain.ddlDept.Size(200,20)
+Gui.frmMain.ddlDept.Position(254,74)
+Gui.frmMain.ddlDept.FontName("Tahoma")
+Gui.frmMain.ddlDept.FontSize(8.25)
+Gui.frmMain.ddlDept.Event(Change,ApplyFilter)
+Gui.frmMain.lbl5.Create(Label,"Dept",True,23,13,0,254,59,True,0,"Tahoma",8.25,,0,0)
+Gui.frmMain.lbl5.BorderStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+	V.Global.sGridViews.Declare
+	V.Global.sSQL.Declare
+	Program.External.Include.Library("GAB_6944_UniversalFunctions.lib")
+Program.Sub.Preflight.End
+Program.Sub.Main.Start
+'by Josh Withrow
+'If something breaks, contact Grant.
+
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+V.Local..BulkDeclareString(sScriptButtons,sButtonText,sAssignedButton)
+V.Local..BulkDeclareLong(iRet)
+V.Local..BulkDeclareDate(dtFrom,dtTo)
+
+'Launch WO Labels GUI
+''Attach to...
+'	Populate: 15710
+'	Script 1: 15760 Async
+'	Script 2: 15770 Async
+'	Script 3: 15780 Async
+
+'Launch WO Labels from SFDC.NET
+''Attach to...
+'	Populate: 49710
+'	Script 1: 49760 Async
+'	Script 2: 49761 Async
+'	Script 3: 49762 Async
+
+V.Local.sAssignedButton.Set("Script 1") 'Script 1/Script 2/Script 3
+V.Local.sButtonText.Set("WO Labels")
+
+'If called from Legacy GUI Populate Hook, change button text.
+F.Intrinsic.Control.If(V.Caller.Hook,=,15710)
+	F.Intrinsic.Control.SelectCase(V.Local.sAssignedButton.UCase)
+		F.Intrinsic.Control.Case("SCRIPT 1")
+			V.Passed.000016.Set(V.Local.sButtonText)
+		F.Intrinsic.Control.Case("SCRIPT 2")
+			V.Passed.000020.Set(V.Local.sButtonText)
+		F.Intrinsic.Control.Case("SCRIPT 3")
+			V.Passed.000021.Set(V.Local.sButtonText)
+		F.Intrinsic.Control.CaseElse
+			'wut
+	F.Intrinsic.Control.EndSelect
+	'Label Caption/Text Set...  Exit Program.
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'If called from SFDC.NET Populate Hook, change button text.
+F.Intrinsic.Control.If(V.Caller.Hook,=,49710)
+	F.Intrinsic.String.Replace(V.Passed.MainFormView-windowsUIButtonPanel-1,V.Local.sAssignedButton,V.Local.sButtonText,v.Local.sScriptButtons)
+	V.Passed.MainFormView-windowsUIButtonPanel-1.Set(V.Local.sScriptButtons)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'*************************************************************************************************
+'************* Start Dashboard Template Stuff
+
+'REQUIRED/OPTIONAL...
+'Set main form title here.  Could be handled in the forms designer, too...
+'If you set this in the forms designer, make sure this line is commented.
+'Gui.frmMain..Caption("Gridview Template")
+
+'REQUIRED...
+'Set list of controls (grids) that should have their preferences saved.  You know, so they grids load the same way the user left them.
+'FORMNAME*!*CONTROLNAME*!*GRIDVIEWNAME#$#form*!*gsgridcontrol*!*gridview#$#etc*!*etc*!*etc
+'Wash/rinse/repeat for each gridview that you want to store.
+'If there is only one gridview to maintain, only supply the single reference.
+V.Global.sGridViews.Set("frmMain*!*GsGCData*!*gvData")
+'V.Global.sGridViews.Set("frmMain*!*GsGCWindMachines*!*gvWindMachines#$#frmMain*!*GsGCShakers*!*gvShakers")
+
+'IGNORE...
+'Set ARC ID
+'Grabs the ARCID from the filename for use with saving/restoring grid preferences.  So make sure you stick with the file naming convention!
+'Typical file naming convention: DDD_IIII_Description.g2u
+'DDD=Department (GCG, ATG, GAB, etc.)
+'IIII=Reserved ARC ID (5849, 1234, whatever)
+'Description=Short Description of Project
+'Example: GCG_5849_UltimateDashboard.g2u
+F.Intrinsic.Control.CallSub(SetARCID)
+
+'Open DB Connection
+F.ODBC.Connection!con.OpenCompanyConnection
+
+'************* End Dashboard Template Stuff
+'*************************************************************************************************
+
+'Everything beyond this point isn't tied to the "template", but is project specific programming.
+
+'Make the main form visible
+Gui.frmMain..Visible(True)
+F.Intrinsic.Control.CallSub(chkAllWO_Change)
+
+'Set SQL query to load data into the grid...
+'SQL Query...  drives everything!
+'A column alias of @Part, @SO, @PO, @WO (just empty column with that heading) will produce a document control link to that entity, and when clicked will launch document control to that item.  
+'A column alias of Part, SO, PO, or WO produce a blue text hyperlink column that, when clicked, lauches S&D, SO View, PO View, or WO View respectively to that entity.  
+'No programming.  Just dropping the appropriate columns into your query(s).
+'
+'Some ground rules...
+'Any PART column that you want to be a link must be aliased to PART, and it must be fully trimmed (no whitespace on either side).  
+' -- Also, LOCATION must be in the query (even if it's not on-screen), too, and must be aliased to LOCATION, LOCN, or LOC.  As long as the column exists 
+'Any SALES ORDER number field that you want to be a link must be aliased to SO
+'Any PURCHASE ORDER number field that you want to be a link must be aliased to PO
+'Any WORK ORDER number field that you want to be a link must have JOB and SUFFIX concatenated together with a hyphen between them. must be aliased to WO
+' -- CASE WHEN SUFFIX='' THEN JOB ELSE JOB+'-'+SUFFIX END AS WO
+'
+'V.Global.sSQL.Set("select '' '@PART', Ltrim(Rtrim(PART)) PART, LOCATION, PRODUCT_LINE, DESCRIPTION from V_INVENTORY_ALL order by PART, LOCATION")
+
+'***********************************************************************
+'Load Dept Filter Dropdown with list of Departments from V_INVENTORY_ALL.DESCRIPTION_2
+F.Data.Dictionary.CreateFromSQL("dicDept","con","select DESCRIPTION_2, DESCRIPTION_2 from V_INVENTORY_ALL group by DESCRIPTION_2 order by DESCRIPTION_2")
+Gui.frmMain.ddlDept.AddItems("Dictionary","dicDept")
+
+'***********************************************************************
+'Set dates to beginning of time and end of time
+Gui.frmMain.dtpFrom.Value("1900-01-01")
+Gui.frmMain.dtpTo.Value("2199-12-31")
+'***********************************************************************
+
+'load grid preferences
+'technically template stuff.
+
+F.Intrinsic.Control.CallSub(Deserialize)
+
+Gui.frmMain.txtJobStart.SetFocus
+
+Program.Sub.Main.End
+
+Program.Sub.frmMain_UnLoad.Start
+	F.Intrinsic.Control.Try
+		
+		F.Intrinsic.Control.CallSub(Serialize)
+		F.ODBC.Connection!con.Close
+		F.Intrinsic.Control.End
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmMain_UnLoad.End
+
+Program.Sub.frmMain_RefreshClick.Start
+F.Intrinsic.Control.Try
+		
+		F.Intrinsic.Control.CallSub(Serialize)
+		F.Intrinsic.Control.CallSub(DataLoader)
+		F.Intrinsic.Control.CallSub(Deserialize)
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmMain_RefreshClick.End
+
+Program.Sub.frmMain_UserButtonClicked.Start
+	F.Intrinsic.Control.Try
+		
+		'V.ARGS.BUTTON: ButtonName of the button clicked (not the text/caption, but the control name)...
+		'From ScreenSU...
+		'                           ButtonName
+		'                           \/
+		'Gui.frmMain..BarAddButton("ResetColumns","Reset Columns",V.Enum.Image!LAYOUT_RESET_COLOR)
+		
+		F.Intrinsic.Control.SelectCase(V.Args.Button)
+			
+			F.Intrinsic.Control.Case("ResetGridLayout")
+				F.Intrinsic.Control.CallSub(ResetGrid,"sGridViewName","GVData")
+				F.Intrinsic.Control.CallSub(LoadData, "sDataTableName","dtData","sFormName","frmMain","sGridControlName","GsGCData","sGridViewName","gvData","sSQL",V.Global.sSQL)
+				F.Intrinsic.Control.CallSub(Deserialize)
+				
+			F.Intrinsic.Control.Case("SaveGridLayout")
+				F.Intrinsic.Control.CallSub(Serialize)
+				
+		F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmMain_UserButtonClicked.End
+
+Program.Sub.DataLoader.Start
+	F.Intrinsic.Control.Try
+	
+	V.Local..BulkDeclareString(sFieldNames,sColumns)
+	V.Local..BulkDeclareLong(iCnt)
+	'Get data and load into grid(s)
+	'                                                                           Name of form where GridControl lives                     Name of Gridview (usually just the same name as GridControl or DataTable, but with gv prefix)
+	'                                                                           |                                                        |
+	'                                                      Name of DataTable    |                             Name of GridControl to load data into      Basis (SQL query) to load into the grid                                                        If you want to include/wrap the suspend layout in this call, set to TRUE.  Or, if you want to set it manually around it, set it to False.
+	'                                                      \/                   \/                            \/                         \/              \/                                                                                             \/                
+	'F.Intrinsic.Control.CallSub(LoadData,"sDataTableName","dtData","sFormName","frmMain","sGridControlName","GsGCData","sGridViewName","gvData","sSQL","select PART, LOCATION, PRODUCT_LINE, DESCRIPTION from V_INVENTORY_ALL order by PART, LOCATION","bSuspendLayout",True)
+	
+	'Set SQL query to load data into the grid...
+	'SQL Query...  drives everything!
+	'A column alias of @Part, @SO, @PO, @WO (just empty column with that heading) will produce a document control link to that entity, and when clicked will launch document control to that item.  
+	'A column alias of Part, SO, PO, or WO produce a blue text hyperlink column that, when clicked, lauches S&D, SO View, PO View, or WO View respectively to that entity.  
+	'No programming.  Just dropping the appropriate columns into your query(s).
+	'
+	'Some ground rules...
+	'Any PART column that you want to be a link must be aliased to PART, and it must be fully trimmed (no whitespace on either side).  
+	' -- Also, LOCATION must be in the query (even if it's not on-screen), too, and must be named LOCATION, LOCN, or LOC.
+	'Any SALES ORDER number field that you want to be a link must be aliased to SO
+	'Any PURCHASE ORDER number field that you want to be a link must be aliased to PO
+	'Any WORK ORDER number field that you want to be a link must have JOB and SUFFIX concatenated together with a hyphen between them. must be aliased to WO
+	' -- CASE WHEN SUFFIX='' THEN JOB ELSE JOB+'-'+SUFFIX END AS WO
+	'
+	
+	F.Intrinsic.Control.CallSub(LoadData, "sDataTableName","dtData","sFormName","frmMain","sGridControlName","GsGCData","sGridViewName","gvData","sSQL",V.Global.sSQL,"bSuspendLayout",True)
+	
+	'Once the gridview has been loaded once, we shouldn't need to do any of this again...
+	'Additional Grid Formatting Options...  and anything else that you need to tack onto the project revolving around the grid.
+	
+	'Overriding default grid options so that we can edit a column...
+	Gui.frmMain.GsGCData.SetGridViewProperty("gvData","OptionBehaviorEditable",True)
+	Gui.frmMain.GsGCData.SetGridViewProperty("gvData","ReadOnly",False)
+	Gui.frmMain.GsGCData.SetGridViewProperty("gvData","AllowAddRows",False)
+	Gui.frmMain.GsGCData.SetGridViewProperty("gvData","AllowDeleteRows",False)
+	Gui.frmMain.GsGCData.SetGridviewProperty("gvData","EXPANDALLGROUPS",True)
+	
+	'Because OptionBehaviorEditable was overridden, we need to set the ReadOnly/AllowEdit for every column again because the grid forgets anytime we change OptionBehaviorEditable
+	'This sets every column to NOT allow editing and to be READ ONLY.
+	F.Intrinsic.String.Concat("",V.DataTable.dtData.FieldNames,V.Local.sFieldNames)
+	F.Intrinsic.String.Split(V.Local.sFieldNames,"*!*",V.Local.sColumns)
+	
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sColumns.UBound,1)			
+		Gui.frmMain.GsGCData.SetColumnProperty("gvData",V.Local.sColumns(V.Local.iCnt),"AllowEdit",False)
+		Gui.frmMain.GsGCData.SetColumnProperty("gvData",V.Local.sColumns(V.Local.iCnt),"ReadOnly",True)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	'Set Editable Column(s)
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","Select","AllowEdit",True)
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","Select","ReadOnly",False)
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","LABEL_COPY","AllowEdit",True)
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","LABEL_COPY","ReadOnly",False)
+	
+	'Set Column/Cell Properties
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","LABEL_COPY","Caption","# of Labels")
+	Gui.frmMain.GsGcData.SetColumnProperty("gvData","LABEL_COPY","CellHAlignment","Far")
+	Gui.frmMain.GsGcData.SetColumnProperty("gvData","LABEL_COPY","DisplayCustomNumeric","##,###,##0")
+	Gui.frmMain.GsGcData.SetColumnProperty("gvData","LABEL_COPY","CellBackColor",Variable.Enum.ThemeColors!ColorYellow)
+	Gui.frmMain.GsGcData.SetColumnProperty("gvData","LABEL_COPY","EditMaskType","numeric")
+	Gui.frmMain.GsGcData.SetColumnProperty("gvData","LABEL_COPY","EditMask","##,###,##0")
+	Gui.frmMain.GsGcData.SetColumnProperty("gvData","LABEL_COPY","EditMaskAsDisplayFormat",True)
+	
+	Gui.frmMain.GsGcData.SetColumnProperty("gvData","WO QTY","CellHAlignment","Far")
+	Gui.frmMain.GsGcData.SetColumnProperty("gvData","WO QTY","DisplayCustomNumeric","##,###,##0")
+	
+	'Hide Unnecessary Columns
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","Customer","Visible",False)
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","Customer Name","Visible",False)
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","Customer Po","Visible",False)
+	Gui.frmMain.GsGCData.SetColumnProperty("gvData","Flag Closed","Visible",False)
+		
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.DataLoader.End
+
+Program.Sub.GsGCData_RowCellClick.Start
+	'V.Args.Screen: FRMMAIN
+	'V.Args.ControlName:GSGCDATA0
+	'V.Args.EventType: ROWCELLCLICK
+	'V.Args.Column: @Part
+	'V.Args.RowIndex: 0
+	
+	'This sub call will handle all of the basic built in core data entity stuff...
+	'linking to S&D, PO View, SO View, WO View, and DCS Linking
+	'@Part, @SO, @PO, @WO, PART, SO, PO, WO columns all handled in the basic sense.
+	F.Intrinsic.Control.CallSub(GetActiveGridView,"ControlName",V.Args.ControlName)
+	F.Intrinsic.Control.CallSub(RowCellClick_HandleCoreEntity, "Screen", V.Args.Screen, "ControlName", V.Args.ControlName, "EventType", V.Args.EventType, "Column", V.Args.Column, "RowIndex", V.Args.RowIndex, "GridView", V.Args.GridView)
+	
+	'Handle anything not handled...
+	'F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+	'	F.Intrinsic.Control.Case("Column Name")
+	'		'Do awesome stuff...
+	'	F.Intrinsic.Control.Case("Column Name 2")
+	'		'Do GNARLY STUFF!
+	'F.Intrinsic.Control.EndSelect
+Program.Sub.GsGCData_RowCellClick.End
+
+Program.Sub.cmdRunGrid_Click.Start
+	F.Intrinsic.Control.Try
+	
+	V.Local..BulkDeclareString(sFrom,sTo,sFromYear,sFromMonth,sFromDay,sToYear,sToMonth,sToDay)
+	
+	F.Intrinsic.Date.Year(V.Screen.frmMain!dtpFrom.Text,V.Local.sFromYear)
+	F.Intrinsic.Date.Month(V.Screen.frmMain!dtpFrom.Text,V.Local.sFromMonth)
+	F.Intrinsic.Date.Day(V.Screen.frmMain!dtpFrom.Text,V.Local.sFromDay)
+	
+	F.Intrinsic.Date.Year(V.Screen.frmMain!dtpTo.Text,V.Local.sToYear)
+	F.Intrinsic.Date.Month(V.Screen.frmMain!dtpTo.Text,V.Local.sToMonth)
+	F.Intrinsic.Date.Day(V.Screen.frmMain!dtpTo.Text,V.Local.sToDay)
+	
+	F.Intrinsic.String.Build("{0}-{1}-{2}",V.Local.sFromYear,V.Local.sFromMonth,V.Local.sFromDay,V.Local.sFrom)
+	F.Intrinsic.String.Build("{0}-{1}-{2}",V.Local.sToYear,V.Local.sToMonth,V.Local.sToDay,V.Local.sTo)
+	
+	F.Intrinsic.String.Build("SELECT CAST(0 as Bit) as 'Select', h.Job, h.Suffix, h.Part, h.Location as 'Locn', h.Description, i.Description_2 as 'Dept', Case when h.Date_Closed <> '1900-01-01' then 'Closed' when h.Date_Closed = '1900-01-01' then '' end as 'Flag Closed', h.Customer_PO 'Customer PO', h.Customer, c.Name_Customer as 'Customer Name', h.qty_order as 'WO Qty', h.qty_order as 'LABEL_COPY' FROM V_JOB_HEADER h LEFT JOIN V_INVENTORY_ALL i ON h.Part=i.Part and h.Location=i.Location LEFT JOIN V_CUSTOMER_MASTER c ON h.Customer=c.Customer WHERE (h.date_due>='{0}' and h.date_due<='{1}')",V.Local.sFrom,V.Local.sTo,V.Global.sSQL)
+	
+	F.Intrinsic.Control.If(V.Screen.frmMain!chkAllWO.CheckedAsBoolean,=,False)
+		F.Intrinsic.String.Concat(V.Global.sSQL, " and ((h.Job>='{0}' and h.Suffix>='{1}') and (h.Job<='{2}' and h.Suffix<='{3}'))",V.Global.sSQL)
+		F.Intrinsic.String.Build(V.Global.sSQL,V.Screen.frmMain!txtJobStart.Text,V.Screen.frmMain!txtSuffixStart.Text,V.Screen.frmMain!txtJobEnd.Text,V.Screen.frmMain!txtSuffixEnd.Text,V.Global.sSQL)
+	F.Intrinsic.Control.EndIf
+	
+	Gui.frmMain.GsGCData.Visible(False)
+	Gui.frmMain.lblLoadingMsg.Visible(True)
+	
+	F.Intrinsic.Control.CallSub(DataLoader)
+	
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	Gui.frmMain.lblLoadingMsg.Visible(False)
+	Gui.frmMain.GsGCData.Visible(True)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdRunGrid_Click.End
+
+Program.Sub.cmdPrintLabels_Click.Start
+	F.Intrinsic.Control.Try
+	
+	V.Local..BulkDeclareString(sReportPath,sMsg)
+	V.Local..BulkDeclareLong(iBIRunID,iBILogID,iBIRptID)
+	V.Local..BulkDeclareBoolean(bExists)
+	
+	'Report Details...
+	F.Intrinsic.String.Build("{0}\LABELS\Custom\GAB_6944_MultipleWOLabel.lab",V.Caller.BusintDir,V.Local.sReportPath)
+	F.Intrinsic.File.Exists(V.Local.sReportPath,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists)
+		F.Global.BI.InitializeReport("Work Order Label (6944)",V.Local.sReportPath,V.Local.iBIRptID)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Please ensure that the label template exists.{0}{0}{1}",V.Ambient.NewLine,V.Local.sReportPath,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"Label Template Not Found")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtLabel.Exists)
+		F.Data.DataTable.Close("dtLabel")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.Create("dtData","dvLabel",22,"Select=1","Part Asc")
+	F.Data.DataView.ToDataTable("dtData","dvLabel","dtLabel",True)
+	F.Data.DataView.Close("dtData","dvLabel")
+	
+	'Getting Run ID...
+	F.Global.BI.GetRunID(V.Local.iBIRunID)
+	'Getting Log ID, start logging...
+	F.Global.BI.StartLogging(V.Local.iBIRunID,V.Local.iBIRptID,-1,"",V.Local.iBILogID)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtLabel.RowCount,>,0)
+	    'Printing Codesoft label
+	    F.Global.BI.PrintCodesoftLabelFromDataTable(V.Local.iBIRunID,V.Local.iBILogID,"dtLabel","",True)
+	    'Stopping Logging
+		F.Global.BI.StopLogging(V.Local.iBILogID)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("No records found.","Notice")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataTable.Close("dtLabel")
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdPrintLabels_Click.End
+
+Program.Sub.cmdUnselect_Click.Start
+	F.Intrinsic.Control.Try
+	
+	V.Local..BulkDeclareString(sActiveFilter)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtData.Exists)
+		Gui.frmMain.GsGCData.GetGridviewProperty("gvData","ActiveFilterString",V.Local.sActiveFilter)
+		F.Data.DataView.Create("dtData","dvCurrentView",22,V.Local.sActiveFilter,"")
+		F.Data.DataView.SetValue("dtData","dvCurrentView",-1,"Select",0)
+		F.Data.DataView.Close("dtData","dvCurrentView")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdUnselect_Click.End
+
+Program.Sub.cmdSelect_Click.Start
+	F.Intrinsic.Control.Try
+	
+	V.Local..BulkDeclareString(sActiveFilter)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtData.Exists)
+		Gui.frmMain.GsGCData.GetGridviewProperty("gvData","ActiveFilterString",V.Local.sActiveFilter)
+		F.Data.DataView.Create("dtData","dvCurrentView",22,V.Local.sActiveFilter,"")
+		F.Data.DataView.SetValue("dtData","dvCurrentView",-1,"Select",1)
+		F.Data.DataView.Close("dtData","dvCurrentView")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdSelect_Click.End
+
+Program.Sub.cmdResetGrid_Click.Start
+	F.Intrinsic.Control.Try
+	
+	V.Local..BulkDeclareString(sFrom,sTo,sFromYear,sFromMonth,sFromDay,sToYear,sToMonth,sToDay)
+	
+	F.Intrinsic.Date.Year(V.Screen.frmMain!dtpFrom.Text,V.Local.sFromYear)
+	F.Intrinsic.Date.Month(V.Screen.frmMain!dtpFrom.Text,V.Local.sFromMonth)
+	F.Intrinsic.Date.Day(V.Screen.frmMain!dtpFrom.Text,V.Local.sFromDay)
+	
+	F.Intrinsic.Date.Year(V.Screen.frmMain!dtpTo.Text,V.Local.sToYear)
+	F.Intrinsic.Date.Month(V.Screen.frmMain!dtpTo.Text,V.Local.sToMonth)
+	F.Intrinsic.Date.Day(V.Screen.frmMain!dtpTo.Text,V.Local.sToDay)
+	
+	F.Intrinsic.String.Build("{0}-{1}-{2}",V.Local.sFromYear,V.Local.sFromMonth,V.Local.sFromDay,V.Local.sFrom)
+	F.Intrinsic.String.Build("{0}-{1}-{2}",V.Local.sToYear,V.Local.sToMonth,V.Local.sToDay,V.Local.sTo)
+	
+	F.Intrinsic.String.Build("SELECT CAST(0 as Bit) as 'Select', h.Job, h.Suffix, h.Part, h.Location as 'Locn', h.Description, i.Description_2 as 'Dept', Case when h.Date_Closed <> '1900-01-01' then 'Closed' when h.Date_Closed = '1900-01-01' then '' end as 'Flag Closed', h.Customer_PO 'Customer PO', h.Customer, c.Name_Customer as 'Customer Name', h.qty_order as 'WO Qty', h.qty_order as 'LABEL_COPY' FROM V_JOB_HEADER h LEFT JOIN V_INVENTORY_ALL i ON h.Part=i.Part and h.Location=i.Location LEFT JOIN V_CUSTOMER_MASTER c ON h.Customer=c.Customer WHERE h.Date_Closed='1900-01-01' and (h.date_due>='{0}' and h.date_due<='{1}')",V.Local.sFrom,V.Local.sTo,V.Global.sSQL)
+	
+	F.Intrinsic.Control.If(V.Screen.frmMain!chkAllWO.CheckedAsBoolean,=,False)
+		F.Intrinsic.String.Concat(V.Global.sSQL, " and ((h.Job>='{0}' and h.Suffix>='{1}') and (h.Job<='{2}' and h.Suffix<='{3}'))",V.Global.sSQL)
+		F.Intrinsic.String.Build(V.Global.sSQL,V.Screen.frmMain!txtJobStart.Text,V.Screen.frmMain!txtSuffixStart.Text,V.Screen.frmMain!txtJobEnd.Text,V.Screen.frmMain!txtSuffixEnd.Text,V.Global.sSQL)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.CallSub(ResetGrid,"sGridViewName","GVData")
+	F.Intrinsic.Control.CallSub(LoadData, "sDataTableName","dtData","sFormName","frmMain","sGridControlName","GsGCData","sGridViewName","gvData","sSQL",V.Global.sSQL)
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdResetGrid_Click.End
+
+Program.Sub.cmdStartWO_Click.Start
+	F.Intrinsic.Control.Try
+
+	V.Local..BulkDeclareString(sRet,sWO,sTitles)
+	V.Local..BulkDeclareLong(iWidths)
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.SetBrowserColumnResizeMode(1)
+	F.Intrinsic.String.Split("Job*!*Suffix*!*Part*!*Description*!*Last Suffix","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("100*!*100*!*300*!*400*!*100","*!*",V.Local.iWidths)
+	Function.Intrinsic.UI.Browser("Select a Work Order","con","select a.Job, a.Suffix, a.Part, a.Description, (select top 1 max(b.suffix) from v_job_header b where b.job=a.job) as EndSuffix from V_JOB_HEADER a order by a.job, a.suffix",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmMain.txtJobStart.Text(V.Local.sRet(0))
+		Gui.frmMain.txtSuffixStart.Text(V.Local.sRet(1))
+		Gui.frmMain.txtJobEnd.Text(V.Local.sRet(0))
+		Gui.frmMain.txtSuffixEnd.Text(V.Local.sRet(4))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdStartWO_Click.End
+
+Program.Sub.cmdEndWO_Click.Start
+	F.Intrinsic.Control.Try
+
+	V.Local..BulkDeclareString(sRet,sWO,sTitles)
+	V.Local..BulkDeclareLong(iWidths)
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.SetBrowserColumnResizeMode(1)
+	F.Intrinsic.String.Split("Job*!*Suffix*!*Part*!*Description","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("100*!*100*!*300*!*400","*!*",V.Local.iWidths)
+	Function.Intrinsic.UI.Browser("Select a Work Order","con","select Job, Suffix, Part, Description from V_JOB_HEADER order by job, suffix",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmMain.txtJobEnd.Text(V.Local.sRet(0))
+		Gui.frmMain.txtSuffixEnd.Text(V.Local.sRet(1))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdEndWO_Click.End
+
+Program.Sub.chkAllWO_Change.Start
+	V.Local..BulkDeclareBoolean(bCheck)
+	
+	F.Intrinsic.Control.SelectCase(V.Screen.frmMain!chkAllWO.CheckedAsBoolean)
+		F.Intrinsic.Control.Case(True)
+			V.Local.bCheck.Set(False)
+		F.Intrinsic.Control.CaseElse
+			V.Local.bCheck.Set(True)
+	F.Intrinsic.Control.EndSelect
+	
+	Gui.frmMain.txtJobStart.Enabled(bCheck)
+	Gui.frmMain.txtSuffixStart.Enabled(bCheck)
+	Gui.frmMain.cmdStartWO.Enabled(bCheck)
+	Gui.frmMain.txtJobEnd.Enabled(bCheck)
+	Gui.frmMain.txtSuffixEnd.Enabled(bCheck)
+	Gui.frmMain.cmdEndWO.Enabled(bCheck)
+Program.Sub.chkAllWO_Change.End
+
+Program.Sub.txtJobStart_Change.Start
+	F.Intrinsic.Control.Try
+	
+	V.Local..BulkDeclareString(sSQL,sRet,sJob)
+	
+	F.Intrinsic.Control.If(V.Screen.frmMain!txtJobStart.Text.Trim,=,"")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("select top 1 a.Suffix, (select top 1 max(b.suffix) from v_job_header b where b.job=a.job) as EndSuffix from V_JOB_HEADER a where a.job='{0}' order by suffix",V.Screen.frmMain!txtJobStart.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmMain.txtSuffixStart.Text(V.Local.sRet(0))
+		Gui.frmMain.txtJobEnd.Text(V.Screen.frmMain!txtJobStart.Text)
+		Gui.frmMain.txtSuffixEnd.Text(V.Local.sRet(1))
+		Gui.frmMain.cmdRunGrid.SetFocus
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("Job not found!","Warning!")
+		Gui.frmMain.txtJobStart.Text("")
+		Gui.frmMain.txtSuffixStart.Text("")
+		Gui.frmMain.txtJobEnd.Text("")
+		Gui.frmMain.txtSuffixEnd.Text("")
+		Gui.frmMain.txtJobStart.SetFocus
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.txtJobStart_Change.End
+
+Program.Sub.ApplyFilter.Start
+	F.Intrinsic.Control.Try
+	
+	V.Local..BulkDeclareString(sActiveFilter,sWOQty)
+	
+	F.Intrinsic.Control.If(V.Screen.frmMain!ddlDept.Text.Trim,=,"")
+		
+		Gui.frmMain.GsGCData.SetGridviewProperty("gvData","ActiveFilterString","")
+	
+	F.Intrinsic.Control.Else
+		
+		F.Intrinsic.String.Build("[DEPT] = '{0}'",V.Screen.frmMain!ddlDept.Text,V.Local.sActiveFilter)
+		Gui.frmMain.GsGCData.SetGridviewProperty("gvData","ActiveFilterString",V.Local.sActiveFilter)
+		F.Data.DataView.Create("dtData","dvCurrentView",22,V.Local.sActiveFilter,"")
+		
+		F.Intrinsic.Control.SelectCase(V.Screen.frmMain!ddlDept.Text.Trim)
+			F.Intrinsic.Control.CaseAny("STOCKROOM","TRIM","PANEL")
+				F.Data.DataView.SetValue("dtData","dvCurrentView",-1,"LABEL_COPY",1)
+		F.Intrinsic.Control.EndSelect
+		
+		F.Data.DataView.Close("dtData","dvCurrentView")
+		
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+	F.Intrinsic.Control.EndTry
+Program.Sub.ApplyFilter.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8369.28112$}$1
+${$6$}$jwithrow$}$20230109170859961$}$D95tSYIikIvF+oq+s87EtBQePACEH+Ey8W86sZvBxWCRWHaYfc6uqcJF77tRPXqu3wn9LKtn6hhC8qlTnYaPog==
+Program.Sub.Comments.End
